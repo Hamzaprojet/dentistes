@@ -3,8 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    
-
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --colorh1:rgb(0, 140, 255);
+    --colorbutton:white;
 }
 h1
 h2
@@ -19,97 +22,11 @@ p,
 button a{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-*{
-    padding: 0;
-    margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
 body{
     background: white;
-
 }
-header {
-    background: skyblue;
-  }
-  h3{
-    color: rgb(0, 140, 255);
-  }
+
   
-  li {
-    list-style: none;
-  }
-  a,
-  a:visited {
-    color:#888888 ;
-    text-decoration: none;
-    text-transform: none;
-    font-size: 0.75em;
-    font-weight: 500;
-
-  }
-  a:hover {
-    color:rgb(0, 140, 255);
-  }
-nav {
-   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    font-size: calc(0.3rem + 2vw);
-    font-size: calc(0.5rem + 1.5vw);
-   
-  }
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-    width: 63%;
-  }
-  #icons {
-    display: none;
-    cursor: pointer;
-    display: none;
-  }
-  @media (max-width: 800px) {
-    #icons {
-      display: block;
-    }
-    #icons:before {
-        content: "\2630";
-      }
-      .active #icons ::before{
-        content: "\2715";
-      }
-      nav ul {
-        position: fixed;
-        left: -100%;
-    
-        top: 1%;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        transition: 0.25%;
-        text-align: center;
-        
-     }
-     a,
-     a :visited{
-        font-size: 1em;
-        color: #008cff;
-     }
-     nav li{
-        padding: 3px 0;
-     }
-     nav li:hover{
-        background: white;
-     }
-     nav.active ul{
-        left: 0;
-
-     }
-     }
-        
-
 
 /* /*-- section-- */
 
@@ -122,36 +39,46 @@ nav {
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 auto;
 }
 
-.sec1 .container .right h1 {
-    font-size: 4em;
+.right h1 {
+    font-size: 2.5em;
     color: #888888;
     text-shadow: 0px 0px 10px white;
 }
 
-.sec1 .container .right p{
-    color:  rgb(0, 140, 255);
+
+ .right p{
+    color: var(--colorh1);
     max-width: 600px;
     font-weight: bold;
     margin: 30px 0;
     font-size: 2em;
 }
-.sec1 .container .right button{
+ .right a {
+    color:  white;
+    font-weight: bold;
+    margin: 30px 0;
+    font-size: 1rem;
+}
+ .right button{
     width: 300px;
     height: 65px;
     border-radius: 15px;
     border: none;
-    color: white;
+    color:#008cff;
     font-size: 1.2em;
     font-weight: 900;
-    background-color:  rgb(0, 140, 255);
+    background-color: var(--colorbutton);
     box-shadow: 0px 0px 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-.sec1 .container .right button:hover{
+ .right button:hover{
     transform: scale(1.02); 
+    background-color: #0689f5;
+    color: #fff;
 }
 
 .left{
@@ -161,23 +88,22 @@ nav {
     margin-left: 100px;
 }
 .left img {
-    width: 300px; 
+    width: 500px; 
     height: auto; 
 }
+
 .right{
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
 }
-.sec1 .container .right p{
-    
+ .right p{
     margin: 45px 35px;
 }
 @media (max-width:800px) {
     .sec1 .container{
-        flex-direction:column;
-        
+        flex-direction:column;   
     }
 
 }
@@ -210,6 +136,14 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     grid-gap:30px;
+    padding: 20px;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: -52px;
 }
 .service{
     text-align: center;
@@ -219,6 +153,10 @@ nav {
     cursor: pointer;
     background: transparent;
     transition: transform 0.5s, backround 0.5s;
+    
+}
+.service:hover{
+    transform: scale(1.02); 
 }
 .service i{
     font-size: 40px;
@@ -226,18 +164,16 @@ nav {
     color:#008cff ;
 
 }
-
 .service h2{
     font-weight: 600;
     margin-bottom: 8px;
-
+    color: black;
+    font-size: 20px;
 }
 .service p{
    font-size:large;
    color: gray
 }
-
-
  h1{
     text-align: center;
     padding-top: 10%;
@@ -245,8 +181,6 @@ nav {
     font-weight: 600;
     position: relative;
 }
-
-
  h1::after{
     content: "";
     background-color: rgb(0, 140, 255);
@@ -257,8 +191,6 @@ nav {
     left: 50%;
     transform: translateX(-50%) ;
 }
-
-
 .container2{
 	position: relative;
 	width: 100%;
@@ -277,7 +209,7 @@ nav {
         justify-content: center;
         align-items: center;
         padding: 30px 50px;
-        margin-left: 500px;
+        margin-left: 0 auto;
     }	
     .contact-box{
         max-width: 850px;
@@ -288,7 +220,7 @@ nav {
         text-align: center;
         background-color: #fff;
         box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
-        margin-right: 300px;
+        
     }
 }
 .container2:after{
@@ -298,21 +230,25 @@ nav {
 	height: 100%;
 	left: 0;
 	top: 0;
-	
-	
 	filter: blur(50px);
 	z-index: -1;
 }
 .contact-box{
-	max-width: 850px;
+	max-width: 650px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	background-color: #fff;
-	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
-    margin-left: 300px;
+    margin:  auto;
+    border: 10px;
+    border-top: 10px;
+}
+h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .right2{
@@ -320,20 +256,23 @@ nav {
 	height: 70%;
 }
 .right2 img{
-    width: 400px; 
-    height: auto;  
+    width: 300px; 
+    height:auto;
+    margin-left: 100px;  
 }
 
-.left2{
-	padding: 25px 40px;
+.let2{
+	height: auto;
 }
 
 h2{
 	position: relative;
-	padding: 0 0 10px;
-	margin-bottom: 10px;
+	padding: 0 0 20px;
 }
-
+.service h1{
+    color: #008cff;
+    margin-bottom: 20px;
+}
 h2:after{
 	content: '';
     position: absolute;
@@ -354,6 +293,7 @@ h2:after{
 	font-size: 1.1rem;
 	margin-bottom: 22px;
 	transition: .3s;
+    border-radius: 10px;
 }
 .field:hover{
 	background-color: rgba(0, 0, 0, 0.1);
@@ -395,10 +335,9 @@ textarea{
     
 	}
 }
-.container2 .left2 button:hover{
+.left2 button:hover{
     transform: scale(1.02); 
 }
-
 
 
 
